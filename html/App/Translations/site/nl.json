@@ -1,0 +1,12 @@
+{
+  "trans": {
+    "menu": {
+      "home": "Home",
+      "about": "Bedrijf",
+      "services": "Diensten",
+      "products": "Produkten",
+      "sales": "Verkoop",
+      "contact": "Contact"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "trans": {
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "products": "Products",
+      "sales": "Sales",
+      "contact": "Contact"
+    }
+  }
+}

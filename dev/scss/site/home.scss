@@ -1,0 +1,16 @@
+@use '../core/abstracts/mixins' as mix;
+@use '../core/abstracts';
+@use '../core/base';
+@use '../core/components';
+
+@use 'layout';
+
+:root {
+  --body-bg-clr: var(--surface-3);
+  --body-clr: var(--text-change);
+}
+
+body {
+  background-color: var(--body-bg-clr);
+  color: var(--body-clr);
+}

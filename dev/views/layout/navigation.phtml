@@ -1,0 +1,39 @@
+<nav>
+  <ul>
+    <li>
+      <a <?= $scMetaController === 'Home' ? 'class="active"' : '' ?> href=" /<?= $scMetaLanguage ?>/Home">
+        <?= $trans['menu']['home'] ?>
+      </a>
+    </li>
+    <li>
+      <a <?= $scMetaController === 'About' ? 'class="active"' : '' ?> href=" /<?= $scMetaLanguage ?>/About">
+        <?= $trans['menu']['about'] ?>
+      </a>
+    </li>
+    <li>
+      <a <?= $scMetaController === 'Services' ? 'class="active"' : '' ?> href=" /<?= $scMetaLanguage ?>/Services">
+        <?= $trans['menu']['services'] ?>
+      </a>
+    </li>
+    <li>
+      <a <?= $scMetaController === 'Products' ? 'class="active"' : '' ?> href=" /<?= $scMetaLanguage ?>/Products">
+        <?= $trans['menu']['products'] ?>
+      </a>
+    </li>
+    <li>
+      <a <?= $scMetaController === 'Sales' ? 'class="active"' : '' ?> href=" /<?= $scMetaLanguage ?>/Sales">
+        <?= $trans['menu']['sales'] ?>
+      </a>
+    </li>
+    <li>
+      <a <?= $scMetaController === 'Contact' ? 'class="active"' : '' ?> href=" /<?= $scMetaLanguage ?>/Contact">
+        <?= $trans['menu']['contact'] ?>
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li><a href="/en/<?= $scMetaController ?>">ENGLISH</a></li>
+    <li><a href="/nl/<?= $scMetaController ?>">DUTCH</a></li>
+    <li><a href="/fr/<?= $scMetaController ?>">FRENCH</a></li>
+  </ul>
+</nav>
