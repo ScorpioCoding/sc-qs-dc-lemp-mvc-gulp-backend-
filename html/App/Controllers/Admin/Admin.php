@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Site;
+namespace App\Controllers\Admin;
 
 use App\Core\Controller;
 use App\Core\View;
@@ -10,9 +10,9 @@ use App\Utils\Site\Meta;
 
 
 /**
- *  Home
+ *  Admin Admin
  */
-class Home extends Controller
+class Admin extends Controller
 {
   protected function before()
   {
@@ -22,17 +22,19 @@ class Home extends Controller
   {
     //MetaData
     $meta = array();
-    $meta = (new Meta($args))->getMeta();
+    //$meta = (new Meta($args))->getMeta();
     // Translation
     $trans = array();
-    $trans = Translation::translate($args);
+    //$trans = Translation::translate($args);
     // Extra data
     $data = array();
 
 
 
-   $args['template'] = 'Template';
-    View::render($args, $meta, $trans, $data);
+    $args['template'] = 'Backend';
+    View::render($args, $meta, $trans, [
+      'data' => $data,
+    ]);
   }
 
   protected function after()

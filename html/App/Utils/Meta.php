@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utils\Site;
+namespace App\Utils;
 
 use App\Core\DotEnv;
 
@@ -86,8 +86,9 @@ class Meta
     $this->meta['scMetaOgUrl'] .= '/' . $args['action'];
 
     $this->meta['scMetaPath']  = strtolower($args['module']);
-    $this->meta['scMetaPath']  .= DS;
-    $this->meta['scMetaPath']  .= strtolower($args['controller']);
+    // 
+    // $this->meta['scMetaPath']  .= DS;
+    // $this->meta['scMetaPath']  .= strtolower($args['controller']);
 
 
     $this->meta['scMetaLanguage']       = $lang;
