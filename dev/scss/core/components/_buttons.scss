@@ -13,6 +13,7 @@
   touch-action: manipulation;
   outline: none;
   user-select: none;
+
   &:disabled {
     cursor: not-allowed;
   }
@@ -20,23 +21,10 @@
 
 .btn {
   @extend %btn-common;
+  padding: 12px 20px;
+  border: none;
 }
 
-.btn-brand {
-  @extend %btn-common;
-  background-color: var(--brand);
-  color: var(--textW);
-  font-weight: var(--fw-700);
-  font-family: var(--ff-accent);
-  font-size: var(--fs-400);
-
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 2rem 2rem -2rem hsl(var(--brand) 10% 25%);
-  &:focus {
-    font-size: var(--fs-300);
-  }
-}
 
 .rad-shadow {
   border: 1px solid hsl(var(--brand) 10% 50% / 15%);
@@ -47,4 +35,33 @@
     0 22.3px 17.9px hsl(var(--shadow) / calc(var(--shadow-strength) + 0.02)),
     0 41.8px 33.4px hsl(var(--shadow) / calc(var(--shadow-strength) + 0.03)),
     0 100px 80px hsl(var(--shadow) / var(--shadow-strength));
+}
+
+
+.btn-boston {
+  background-color: hsl(var(--boston-hue), var(--boston-sat), 34%);
+  color: var(--txt-light);
+
+  &:hover {
+    background-color: hsl(var(--boston-hue), 40%, 45%);
+  }
+}
+
+.btn-fern {
+  background-color: hsl(var(--fern-hue), var(--fern-sat), 34%);
+  color: var(--txt-light);
+
+  &:hover {
+    background-color: hsl(var(--fern-hue), 40%, 45%);
+  }
+}
+
+
+.btn-coral {
+  background-color: hsl(var(--coral-hue), var(--coral-sat), 34%);
+  color: var(--txt-light);
+
+  &:hover {
+    background-color: hsl(var(--coral-hue), 40%, 45%);
+  }
 }

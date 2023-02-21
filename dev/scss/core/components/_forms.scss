@@ -1,42 +1,83 @@
+@use '../abstracts/mixins' as mix;
+
 /*------------------form -----------------------*/
 
 /* Add a background color and some padding around the form */
-.formContainer {
+%formBase {
   border-radius: 5px;
-  padding: 20px;
+  padding: 2em;
+  margin: 2em;
+  background-color: var(--surface-4);
+  color: var(--txt-light);
+  width: auto;
+  height: auto;
+  font-size: var(--fs-500);
 }
 
+.formBox {
+  @extend %formBase;
+}
+
+.formBoxSmall {
+  width: auto;
+
+  @include mix.mq() {
+    width: 600px;
+  }
+}
+
+
 /* Style inputs with type="text", select elements and textareas */
-.formContainer input[type='text'],
+.formBox input[type='text'],
 input[type='email'],
 input[type='password'],
 input[type='tel'],
+input[type='date'],
 select,
+datalist,
 textarea {
   border: none;
   border-bottom: 1px dashed solid #ccc;
   background-color: transparent;
+  color: var(--txt-light);
 
-  width: 100%; /* Full width */
-  padding: 0px; /* Some padding */
+  width: 100%;
+  /* Full width */
+  padding-inline: 0.5em;
+  /* Some padding */
   //border: 1px solid #ccc; /* Gray border */
   //border-radius: 4px; /* Rounded borders */
   //box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 0px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  margin-top: 0px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical;
+
+  /* Allow the user to vertically resize the textarea (not horizontally) */
+  &:active,
+  &:focus {
+    background-color: green;
+  }
+
 }
 
-.formContainer label {
+
+
+.formBox label {
   width: 100%;
-  margin-top: 20px; /* Add a top margin */
-  margin-bottom: 0px; /* Bottom margin */
+  margin-top: 20px;
+  /* Add a top margin */
+  margin-bottom: 0px;
+  /* Bottom margin */
+  font-size: var(--fs-400);
 }
 
 /* Style the submit button with a specific background color etc */
-.formContainer input[type='submit'] {
-  background-color: #04aa6d;
-  color: white;
+.formBox input[type='submit'] {
+  background-color: hsl(var(--fern-hue), var(--fern-sat), 34%);
+
+  color: var(--txt-light);
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -44,6 +85,88 @@ textarea {
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-.formContainer input[type='submit']:hover {
-  background-color: #45a049;
+.formBox input[type='submit']:hover {
+  background-color: hsl(var(--fern-hue), 40%, 45%);
+}
+
+input[type='button'] {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.formBox .group {
+  padding-block: 1em;
+}
+
+input[type='button'] .btn-boston {
+  background-color: hsl(var(--boston-hue), var(--boston-sat), 34%);
+  color: var(--txt-light);
+
+  &:hover {
+    background-color: hsl(var(--boston-hue), 40%, 45%);
+  }
+}
+
+input[type='button'] .btn-fern {
+  background-color: hsl(var(--fern-hue), var(--fern-sat), 34%);
+  color: var(--txt-light);
+
+  &:hover {
+    background-color: hsl(var(--fern-hue), 40%, 45%);
+  }
+}
+
+
+input[type='button'] .btn-coral {
+  background-color: hsl(var(--coral-hue), var(--coral-sat), 34%);
+  color: var(--txt-light);
+
+  &:hover {
+    background-color: hsl(var(--coral-hue), 40%, 45%);
+  }
+}
+
+
+
+
+.formSearch {
+  @extend %formBase;
+
+  .searchBox {
+    width: 500px;
+    position: relative;
+    border: 1px solid #1e90ff;
+    border-radius: 5px;
+
+    input {
+      margin: 0px;
+      padding: 20px;
+      width: 100%;
+      outline: none;
+      height: 40px;
+      //border-radius: 5px;
+      border: 1px solid #1e90ff;
+    }
+
+    button {
+      position: absolute;
+      padding-inline: 1em;
+      top: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      right: 0px;
+      z-index: 2;
+      border: none;
+      top: 2px;
+      height: 40px;
+      cursor: pointer;
+      color: white;
+      background-color: #1e90ff;
+      transform: translateX(2px);
+    }
+
+  }
 }

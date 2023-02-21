@@ -16,14 +16,24 @@ body {
 }
 
 main {
-  // margin-top: 10rem;
-  // max-width: 100vw;
-  // display: flex;
-  // flex-direction: column;
-  // place-content: center;
-  // place-items: center;
+  margin-block: 5em;
+  max-width: 100vw;
+  max-height: 100vh;
+}
 
-  //box-shadow: inset 0 0 0 2000px hsla(var(--brand-hue), 90%, 10%, var(--shadow-strength));
+iframe {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
 }
 .grid {
   margin-top: 3em;
@@ -44,4 +54,13 @@ main {
     0 22.3px 17.9px hsl(var(--shadow) / calc(var(--shadow-strength) + 0.02)),
     0 41.8px 33.4px hsl(var(--shadow) / calc(var(--shadow-strength) + 0.03)),
     0 100px 80px hsl(var(--shadow) / var(--shadow-strength));
+}
+
+.float {
+  float: right;
+}
+
+.flexRow {
+  display: flex;
+  flex-flow: row wrap;
 }

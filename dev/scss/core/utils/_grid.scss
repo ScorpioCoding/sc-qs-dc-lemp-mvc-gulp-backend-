@@ -1,0 +1,164 @@
+@use '../abstracts/mixins' as mix;
+
+.grid {
+  margin-top: 3em;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@include mix.mq() {
+  .grid1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 'left right';
+    gap: 1em;
+
+    .left {
+      grid-area: left;
+    }
+
+    .right {
+      grid-area: right;
+    }
+  }
+
+  .grid1b {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'left right';
+    gap: 1em;
+
+    .left {
+      grid-area: left;
+    }
+
+    .right {
+      grid-area: right;
+    }
+  }
+
+  .grid2 {
+    // width: 100%;
+    // height: 100vh;
+    display: grid;
+    grid-template-columns: 1.5em 1fr 1fr 1.5em;
+    grid-template-areas: '. left right .';
+    gap: 1em;
+
+    .left {
+      grid-area: left;
+    }
+
+    .right {
+      grid-area: right;
+    }
+  }
+
+  .grid3 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-areas: 'left middle right';
+    gap: 1em;
+
+    .left {
+      grid-area: left;
+    }
+
+    .middle {
+      grid-area: middle;
+    }
+
+    .right {
+      grid-area: right;
+    }
+  }
+
+  .grid3-right {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas: 'left middle right';
+    gap: 1em;
+
+    .left {
+      grid-area: left;
+    }
+
+    .middle {
+      grid-area: middle;
+    }
+
+    .right {
+      grid-area: right;
+    }
+  }
+
+  .grid4 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas:
+      'left right'
+      ' bottom bottom';
+    gap: 1em;
+
+    .left {
+      grid-area: left;
+    }
+
+    .bottom {
+      grid-area: bottom;
+    }
+
+    .right {
+      grid-area: right;
+    }
+  }
+
+  .grid5 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5em 1fr 1.5em;
+    grid-template-areas: '. middle .';
+    gap: 1em;
+
+    .middle {
+      grid-area: middle;
+    }
+  }
+
+  .grid6 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5em 1fr 1fr 1.5em;
+    grid-template-areas:
+      '. one two .'
+      '. three four .'
+      '.  three five .';
+    gap: 1em;
+
+
+    .one {
+      grid-area: one;
+    }
+
+    .two {
+      grid-area: two;
+    }
+
+    .three {
+      grid-area: three;
+    }
+
+    .four {
+      grid-area: four;
+    }
+
+    .five {
+      grid-area: five;
+    }
+  }
+}

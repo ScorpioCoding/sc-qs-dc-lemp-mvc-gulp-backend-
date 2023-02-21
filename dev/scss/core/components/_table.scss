@@ -1,0 +1,41 @@
+table {
+  margin-block: 3em;
+  padding: 2em;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--surface-4);
+  color: var(--txt-dark);
+  width: 100%;
+  text-align: left;
+
+  thead {
+    color: var(--txt-light);
+    background-color: transparent;
+
+    th {
+      padding-inline: 0.5em;
+    }
+  }
+
+  tbody>tr>td {
+    color: var(--txt-dark);
+    padding: 0.25em;
+
+    a {
+      color: var(--txt-dark);
+    }
+
+    span {
+      cursor: pointer;
+      padding-inline: .5em;
+    }
+  }
+
+  tbody>tr:nth-child(even) {
+    background-color: var(--surface-1);
+  }
+
+  tbody>tr:nth-child(odd) {
+    background-color: var(--surface-2);
+  }
+}
