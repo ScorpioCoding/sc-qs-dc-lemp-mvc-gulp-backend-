@@ -1,0 +1,46 @@
+<div id="mySideNav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <div class="sub">
+    <h3><?= $data['user_permission'] ?></h3>
+  </div>
+
+  <div class="sub">
+    <h3>Dashboard</h3>
+    <a href="/admin/dashboard" onclick="closeNav()">Dashboard</a>
+  </div>
+
+
+  <div class="sub">
+    <h3>Customers</h3>
+    <a href="/customer/list" onclick="closeNav()">Customer List</a>
+    <a href="/customer/new" onclick="closeNav()">Customer New</a>
+  </div>
+
+  <div class="sub">
+    <h3>Inventory</h3>
+    <a href="/items/list" onclick="closeNav()">Items List</a>
+    <a href="/items/new" onclick="closeNav()">New Item</a>
+  </div>
+
+  <div class="sub">
+    <h3>Vendors</h3>
+    <a href="/vendor/list" onclick="closeNav()">Vendor List</a>
+    <a href="/vendor/new" onclick="closeNav()">Vendor New</a>
+  </div>
+
+
+
+  <div class="sub">
+    <h3>Setup</h3>
+    <a href="/admin/setup/company" onclick="closeNav()">Company</a>
+    <a href="/admin/setup/address" onclick="closeNav()">Address</a>
+    <a href="/admin/setup/employee" onclick="closeNav()">Employee</a>
+    <a href="/admin/setup/uom" onclick="closeNav()">Unit of Measure</a>
+  </div>
+
+
+
+
+
+</div>

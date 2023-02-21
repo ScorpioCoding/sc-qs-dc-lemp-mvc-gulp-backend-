@@ -1,7 +1,7 @@
 {
-  "name": "name-your-website",
+  "name": "sc-qs-backend",
   "version": "1.0.0",
-  "description": "website of",
+  "description": "ScorpioCoding QuickStart Backend",
   "author": "denOldTimer",
   "license": "All rights reserved",
   "devDependencies": {

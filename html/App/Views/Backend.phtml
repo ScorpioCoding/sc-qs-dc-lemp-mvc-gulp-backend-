@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="<?= $scMetaLanguage ?>" dir="ltr" color-scheme="auto">
+
+<head>
+  <?php include 'layout/header.backend.phtml'; ?>
+
+  <!-- Style link to fontawesome 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- Make sure /admin is not in the iFrame -->
+  <!-- <script type="text/javascript">
+    if (top != self) top.location.href = location.href;
+  </script> -->
+
+
+  <time>2014-09-16T18:20:30+01:00</time>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+  <?php include 'layout/topbar.phtml' ?>
+  <?php if ($data['user_permission'] === 'super') include 'layout/sidebar.super.phtml';  ?>
+  <?php if ($data['user_permission'] === 'admin') include 'layout/sidebar.admin.phtml';  ?>
+  <?php if ($data['user_permission'] === 'user') include 'layout/sidebar.user.phtml';  ?>
+
+  <?php include $page; ?>
+
+  <footer>
+    <?php include 'layout/footer.phtml' ?>
+  </footer>
+
+
+  <script src="/js/admin.js" defer></script>
+</body>
+
+</html>
