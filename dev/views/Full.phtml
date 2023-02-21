@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="<?= $scMetaLanguage ?>" dir="ltr" color-scheme="auto">
 
-  <head>
-    <?php include 'layout/header.full.phtml'; ?>
+<head>
+  <?php include 'layout/header.full.phtml'; ?>
 
-    <link rel="stylesheet" href="/css/<?= $scMetaPath; ?>.css">
-  </head>
+  <link rel="stylesheet" href="/css/<?= $scMetaPath; ?>.css">
+</head>
 
-  <body>
+<body>
 
-    <header>
-      <?php include 'layout/navigation.phtml'; ?>
+  <header>
+    <?php include 'layout/navigation.phtml'; ?>
 
-    </header>
-
-
-    <?php include $page; ?>
+  </header>
 
 
+  <?php include $page; ?>
 
-    <footer>
-      <?php include 'layout/footer.phtml' ?>
-    </footer>
 
-    <script src="/js/<?= $scMetaPath; ?>.js"></script>
-  </body>
+
+  <footer>
+    <?php include 'layout/footer.phtml' ?>
+  </footer>
+
+  <script src="/js/<?= $scMetaPath; ?>.js"></script>
+</body>
 
 </html>

@@ -3,10 +3,15 @@
 namespace App\Controllers\Admin;
 
 use App\Core\Controller;
+use App\Core\NewException;
 use App\Core\View;
 use App\Core\Translation;
 
-use App\Utils\Site\Meta;
+use App\Utils\Meta;
+use App\Utils\Auth;
+
+use App\Models\mCommon;
+use App\Models\User\mUser;
 
 
 /**
@@ -28,6 +33,27 @@ class Admin extends Controller
     //$trans = Translation::translate($args);
     // Extra data
     $data = array();
+
+    try {
+      $con = mCommon::testForConnection();
+      if ($con) {
+        mUser::setTable();
+        if (mCommon::testForTable('User')) {
+          $res = mUser::readByPermission('super');
+          if (empty($res)) {
+            self::redirect('/admin/setup');
+          } else if (Auth::sessionValide()) {
+            self::redirect('/admin/dashboard');
+          } else {
+            self::redirect('/admin');
+          }
+        }
+      } else {
+        throw new NewException('Controller: Admin/Admin.php : Database connection failed');
+      }
+    } catch (NewException $e) {
+      echo $e->getErrorMsg();
+    }
 
 
 
