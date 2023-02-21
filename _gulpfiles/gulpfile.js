@@ -4,7 +4,7 @@ const postcss = require("gulp-postcss");
 const cssNano = require("cssnano");
 const terser = require("gulp-terser");
 
-//Views for Site
+//Views for all Modules
 function copyViews() {
   return src("../dev/views/**/*.phtml").pipe(dest("../html/App/Views/"));
 }

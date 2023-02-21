@@ -31,7 +31,7 @@ class Admin extends Controller
 
 
 
-    $args['template'] = 'Backend';
+    $args['template'] = 'Basic';
     View::render($args, $meta, $trans, [
       'data' => $data,
     ]);
