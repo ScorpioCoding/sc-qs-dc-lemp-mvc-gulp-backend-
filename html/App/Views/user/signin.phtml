@@ -1,20 +1,19 @@
 <main class="container">
   <h3>THE USER SIGN IN PAGE</h3>
   <?php if (!empty($data['errorList'])) : ?>
-  <div>
-    <p>Requirements:</p>
-    <ul>
-      <?php foreach ($data['errorList'] as $value) : ?>
-      <li><?= $value ?></li>
-      <?php endforeach ?>
-    </ul>
-  </div>
+    <div>
+      <p>Requirements:</p>
+      <ul>
+        <?php foreach ($data['errorList'] as $value) : ?>
+          <li><?= $value ?></li>
+        <?php endforeach ?>
+      </ul>
+    </div>
   <?php endif ?>
 
   <form class="formBox formSignIn" action="" method="post">
     <label for="email">Email</label>
-    <input type="email" name="email" id="email" value="<?= $data['user_email'] ?>"
-      <?= ($data['readonly']) ? 'readonly' : ''; ?> />
+    <input type="email" name="email" id="email" value="<?= $data['user_email'] ?>" <?= ($data['readonly']) ? 'readonly' : ''; ?> />
 
 
     <label for="password">Password</label>
@@ -23,7 +22,8 @@
 
 
     <?php if ($data['readonly'] == false) : ?>
-    <input class="float" type="submit" value="SEND">
+      <button type="submit" class="float btn btn-fern">LOGIN</button>
+      <button type="reset" class="float mi-10 btn btn-boston">RESET</button>
     <?php endif ?>
   </form>
 

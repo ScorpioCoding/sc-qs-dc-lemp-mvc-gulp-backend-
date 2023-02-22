@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Dashboard;
+namespace App\Controllers\User;
 
 use App\Core\Controller;
 use App\Core\View;
@@ -13,9 +13,9 @@ use App\Utils\Functions;
 use App\Models\mCommon;
 
 /**
- *  Dashboard Dashboard
+ *  User Dashboard
  */
-class Dashboard extends Controller
+class User extends Controller
 {
   protected function before()
   {
@@ -36,6 +36,9 @@ class Dashboard extends Controller
     $data['user_permission'] = Auth::getSession('user_permission');
     $data['user_id'] = Auth::getSession('user_id');
 
+    if (mCommon::testForTable('User')) {
+      $user = mCommon::readTable('User');
+    }
 
 
 
@@ -43,6 +46,7 @@ class Dashboard extends Controller
     $args['template'] = 'Backend';
     View::render($args, $meta, $trans, [
       'data' => $data,
+      'user' => $user,
     ]);
   }
 
