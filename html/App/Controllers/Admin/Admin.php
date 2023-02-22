@@ -27,13 +27,25 @@ class Admin extends Controller
   {
     //MetaData
     $meta = array();
-    //$meta = (new Meta($args))->getMeta();
+    $meta = (new Meta($args))->getMeta();
     // Translation
     $trans = array();
     //$trans = Translation::translate($args);
     // Extra data
     $data = array();
 
+
+
+
+
+    $args['template'] = 'Basic';
+    View::render($args, $meta, $trans, [
+      'data' => $data,
+    ]);
+  }
+
+  public function selectAction($args = array())
+  {
     try {
       $con = mCommon::testForConnection();
       if ($con) {
@@ -45,7 +57,7 @@ class Admin extends Controller
           } else if (Auth::sessionValide()) {
             self::redirect('/admin/dashboard');
           } else {
-            self::redirect('/admin');
+            self::redirect('/admin/user/signin');
           }
         }
       } else {
@@ -54,13 +66,6 @@ class Admin extends Controller
     } catch (NewException $e) {
       echo $e->getErrorMsg();
     }
-
-
-
-    $args['template'] = 'Basic';
-    View::render($args, $meta, $trans, [
-      'data' => $data,
-    ]);
   }
 
   protected function after()

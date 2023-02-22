@@ -8,7 +8,6 @@ use App\Core\Session;
 
 class Auth
 {
-
   public static function sessionUp(object $user): bool
   {
     if ($user) {

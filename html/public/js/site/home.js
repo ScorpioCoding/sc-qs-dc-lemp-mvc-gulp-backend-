@@ -1,1 +1,0 @@
-document.querySelector("#btn").addEventListener("click",(function(){document.querySelector("#demo").innerHTML="HELLO FROM JAVASCRIPT"}));

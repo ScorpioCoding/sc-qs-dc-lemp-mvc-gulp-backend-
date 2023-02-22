@@ -53,16 +53,14 @@ class mUser extends Database
       `email`, 
       `email_validated`, 
       `permission`, 
-      `psw_hash`,
-      `employee_id`
+      `psw_hash`
       )
     VALUES (
       :id, 
       :email, 
       :email_validated, 
       :permission, 
-      :psw_hash,
-      :employee_id
+      :psw_hash
       )";
 
     $dB = static::getdb();
@@ -73,7 +71,6 @@ class mUser extends Database
     $stmt->bindValue(':email_validated', $args['email_validated'], PDO::PARAM_BOOL);
     $stmt->bindValue(':permission', $args['permission'], PDO::PARAM_STR);
     $stmt->bindValue(':psw_hash', $password, PDO::PARAM_STR);
-    $stmt->bindValue(':employee_id', $args['employee_id'], PDO::PARAM_INT);
     try {
       $stmt->execute();
       return $dB->lastInsertId();
@@ -129,8 +126,7 @@ class mUser extends Database
         `email`=:email, 
         `email_validated`=:email_validated, 
         `permission`=:permission,
-        `psw_hash`=:psw_hash,
-        `employee_id`=:employee_id
+        `psw_hash`=:psw_hash
       WHERE `id` = :id";
 
       $dB = static::getdb();
@@ -141,7 +137,6 @@ class mUser extends Database
       $stmt->bindValue(':email_validated', $args['email_validated'], PDO::PARAM_INT);
       $stmt->bindValue(':permission', $args['permission'], PDO::PARAM_STR);
       $stmt->bindValue(':psw_hash', $password, PDO::PARAM_STR);
-      $stmt->bindValue(':employee_id', $args['employee_id'], PDO::PARAM_INT);
 
 
       return $stmt->execute();
