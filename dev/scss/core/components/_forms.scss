@@ -4,11 +4,10 @@
 
 /* Add a background color and some padding around the form */
 %formBase {
-  border-radius: 5px;
   padding: 2em;
   margin: 2em;
-  background-color: var(--surface-4);
-  color: var(--txt-light);
+  //background-color: var(--surface-4);
+  color: var(--txt-dark);
   width: auto;
   height: auto;
   font-size: var(--fs-500);
@@ -39,7 +38,7 @@ textarea {
   border: none;
   border-bottom: 1px dashed solid #ccc;
   background-color: transparent;
-  color: var(--txt-light);
+  color: var(--txt-dark);
 
   width: 100%;
   /* Full width */
